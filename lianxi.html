@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="swiper-3.4.2.min.css"/>
+		<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_387227_exvpxytvqu1pp66r.css
+"/>
+		<style>
+			div,*{
+				margin: 0;
+				padding: 0;
+			}
+			html,body{
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
+			.main{
+				height: 100%;
+			}
+			.main .swiper-slide:nth-child(even){
+				background: #f1f7ff;
+			}
+			
+			.nav{
+				position: fixed;
+				right: 30px;
+				bottom: 200px;
+				z-index: 999;
+				list-style: none;
+			}
+			.nav li a{
+				display: block;
+				width: 90px;
+				height:35px;
+				font: 16px/35px "microsoft yahei";
+				color: #007AFF;
+				text-align: center;
+				text-decoration: none;
+				
+			}
+			.nav li{
+				width: 90px;
+				border: 1px solid #007AFF;
+				border-radius: 35px;
+				margin: 10px 0;
+			}
+			.nav li.active{
+				background: #007AFF;
+			}
+			.nav li.active a{
+				color: white;
+			}
+			.box{
+				width: 150px;
+				height: 150px;
+				position: fixed;
+				z-index: 1000;
+				top: 30%;
+				left: 50%;
+				margin-left: -250px;
+				transition:all 0.7s;
+				/*background: rgba(0,0,0,0.34);*/
+				/*border: 1px dashed #000;*/
+			}
+			.box .panel{
+				width: 106.066px;
+				height: 106.066px;
+				/*background: red;*/
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%)rotate(45deg);
+				border: 1px dashed #ccc;
+			}
+			.box .panel:after{
+				content: "";
+				display: block;
+				width: 150px;
+				border-top: 1px dashed #ccc;	
+				transform-origin:left top;
+				transform: rotate(45deg); 			
+			}
+			.box .panel:before{
+				content: "";
+				display: block;
+				width: 150px;
+				border-top: 1px dashed #ccc;	
+				position: absolute;
+				right: 0;	
+				transform-origin:right top;
+				transform: rotate(-45deg);	
+			}
+			.box .ball{
+				width: 46px;
+				height: 46px;
+				border-radius:50%;
+				/*border: 1px solid #000000;*/
+				position: absolute;
+				z-index:1002;
+				text-align: center;
+				line-height: 46px;
+				color: white;
+				font-size: 30px;
+				transition:all 0.7s;
+			}
+			.box .top{
+				top: -47px;
+				left: 50px;
+				background: blue;
+			}
+			.box .left{
+				top: 50px;
+				left: -47px;
+				background: red;
+			}
+			.box .right{
+				top: 50px;
+				left: 150px;
+				background: yellow;
+			}
+			.box .bottom{
+				top: 150px;
+				left: 50px;
+				background: greenyellow;
+			}
+			.s1{
+				margin-left: -350px;
+				top: -100px;
+				transform: rotate(-180deg);
+			}
+			.box.s1 .ball{
+				transform: rotate(180deg);
+			}
+			.s2{
+				margin-left: -350px;
+				top: -100px;
+				transform: rotate(-90deg);
+			}
+			.box.s2 .ball{
+				transform: rotate(90deg);
+			}
+			.s3{
+				margin-left: -350px;
+				top: -100px;
+				transform: rotate(0deg);
+			}
+			.s4{
+				margin-left: -350px;
+				top: -100px;
+				transform: rotate(-270deg);
+			}
+			.box.s4 .ball,.box.s5 .ball{
+			
+				transform: rotate(270deg);
+			}
+			.s5{
+				margin-left: -350px;
+				top: -200px;
+				transform: rotate(-270deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="top ball iconfont icon-jinbi">
+				
+			</div>
+			<div class="right ball iconfont icon-libao">
+				
+			</div>
+			<div class="left ball iconfont icon-gonggao">
+				
+			</div>
+			<div class="bottom ball iconfont icon-xiazai1-copy-copy">
+				
+			</div>
+			<div class="panel">
+				
+			</div>
+		</div>
+		
+		
+		
+		
+		
+		<ul class="nav">
+			<li class="active"><a href="#">首页</a></li>
+			<li><a href="#">找游戏</a></li>
+			<li><a href="#">领礼包</a></li>
+			<li><a href="#">游戏预告</a></li>
+			<li><a href="#">快乐赚</a></li>
+			<li><a href="#">下载应用</a></li>
+		</ul>
+		<div class="swiper-container main">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					
+				</div>
+				<div class="swiper-slide">
+					
+				</div>
+				<div class="swiper-slide">
+					
+				</div>
+				<div class="swiper-slide">
+					
+				</div>
+				<div class="swiper-slide">
+						
+				</div>
+				<div class="swiper-slide">
+					
+				</div>
+			</div>
+			
+		</div>
+		
+		
+		
+		<script src="../day04/jquery-2.0.3.js"></script>
+		<script src="swiper-3.4.2.min.js"></script>
+		<script type="text/javascript">
+			var swiperobj = new Swiper(".main",{
+				direction:"vertical",
+				simulateTouch:false,
+				mousewheelControl:true,
+				onSlideChangeEnd:function(s){
+					$(".nav").find("li.active").removeClass("active");
+					$(".nav").find("li").eq(s.activeIndex).addClass("active");
+				},
+				onSlideChangeStart:function(s){
+					$(".box").attr("class","box s"+s.activeIndex);
+				}
+			});
+			
+			$(".nav").find("li").click(function(){
+				var i = $(this).index();
+				swiperobj.slideTo(i);
+			})
+		</script>
+	</body>
+</html>
